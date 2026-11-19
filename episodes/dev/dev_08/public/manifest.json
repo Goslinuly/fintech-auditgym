@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-9cf060b8303a",
+  "company_name": "Dunzel Ltd",
+  "base_currency": "USD",
+  "currencies": {
+    "EUR": {
+      "exponent": 2
+    },
+    "JPY": {
+      "exponent": 0
+    },
+    "USD": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2026-12-01T00:00:00+00:00",
+  "period_end": "2027-01-01T00:00:00+00:00",
+  "period_end_exclusive": true,
+  "timezone": "+00:00",
+  "counts": {
+    "ledger_rows": 500,
+    "invoices": 41,
+    "payments": 19,
+    "documents": 60,
+    "fx_rates": 120
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_UP",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

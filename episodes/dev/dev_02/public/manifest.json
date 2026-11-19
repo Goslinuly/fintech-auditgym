@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-79dbc08bb8a6",
+  "company_name": "Orutal Systems",
+  "base_currency": "KZT",
+  "currencies": {
+    "KZT": {
+      "exponent": 2
+    },
+    "USD": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2025-12-01T00:00:00+06:00",
+  "period_end": "2026-01-01T00:00:00+06:00",
+  "period_end_exclusive": true,
+  "timezone": "+06:00",
+  "counts": {
+    "ledger_rows": 300,
+    "invoices": 26,
+    "payments": 14,
+    "documents": 40,
+    "fx_rates": 61
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_UP",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

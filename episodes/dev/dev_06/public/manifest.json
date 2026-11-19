@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-9364f57dd74a",
+  "company_name": "Zelzel Group",
+  "base_currency": "EUR",
+  "currencies": {
+    "EUR": {
+      "exponent": 2
+    },
+    "USD": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2026-03-01T00:00:00+09:00",
+  "period_end": "2026-04-01T00:00:00+09:00",
+  "period_end_exclusive": true,
+  "timezone": "+09:00",
+  "counts": {
+    "ledger_rows": 1800,
+    "invoices": 117,
+    "payments": 63,
+    "documents": 180,
+    "fx_rates": 61
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_EVEN",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

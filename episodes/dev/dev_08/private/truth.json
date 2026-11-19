@@ -1,0 +1,118 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-9cf060b8303a",
+  "issue_count": 6,
+  "issues": [
+    {
+      "issue_id": "ISS-01",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "invoices:INV-3XCL7Y"
+      ],
+      "expected_amount_minor": 3108000,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-3XCL7Y",
+          "ledger:LU67KQ6S"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "invoices:INV-3XCL7Y is dated outside the period (early) but booked inside it"
+    },
+    {
+      "issue_id": "ISS-02",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "payments:PAY-ACEEWD"
+      ],
+      "expected_amount_minor": 2179097,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "ledger:LHCQQNUW",
+          "payments:PAY-ACEEWD"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": "A1",
+      "description": "payments:PAY-ACEEWD is dated outside the period (early_tz) but booked inside it"
+    },
+    {
+      "issue_id": "ISS-03",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-UG3QZA",
+        "payments:PAY-ACEEWD"
+      ],
+      "expected_amount_minor": 1110474,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-UG3QZA",
+          "payments:PAY-ACEEWD"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": "A1",
+      "description": "PAY-ACEEWD settles INV-UG3QZA but 1110474 EUR minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-04",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-ACEEWD"
+      ],
+      "expected_amount_minor": 12012,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "fx:2027-01-01/EUR/USD",
+          "ledger:LHCQQNUW",
+          "payments:PAY-ACEEWD"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": "A1",
+      "description": "payments:PAY-ACEEWD converted at the EUR rate of the wrong date (stale); policy rate is dated 2027-01-01"
+    },
+    {
+      "issue_id": "ISS-05",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-ZPHQYH"
+      ],
+      "expected_amount_minor": 4360000,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-9P3NBP",
+          "invoices:INV-ZPHQYH"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": "B1",
+      "description": "INV-ZPHQYH repeats INV-9P3NBP: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-06",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-BPXMGU"
+      ],
+      "expected_amount_minor": 32208,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "fx:2026-12-04/EUR/USD",
+          "ledger:LG8AMJPV",
+          "payments:PAY-BPXMGU"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": "B1",
+      "description": "payments:PAY-BPXMGU converted at the EUR rate of the wrong date (next_business_day); policy rate is dated 2026-12-04"
+    }
+  ]
+}

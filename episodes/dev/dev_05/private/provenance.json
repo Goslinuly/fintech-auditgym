@@ -1,0 +1,575 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-c6cdbb94fc36",
+  "generator_version": "0.1.0",
+  "config_version": "1.0",
+  "config": {
+    "config_version": "1.0",
+    "name": "mixed_large",
+    "n_ledger_rows": 1800,
+    "n_documents": 180,
+    "base_currency": null,
+    "currencies": [
+      "KZT",
+      "USD",
+      "EUR",
+      "JPY"
+    ],
+    "n_foreign_currencies": [
+      1,
+      2
+    ],
+    "foreign_invoice_share": 0.35,
+    "timezone": null,
+    "period": null,
+    "clean": false,
+    "error_counts": {
+      "duplicate_invoice": [
+        1,
+        2
+      ],
+      "payment_allocation": [
+        1,
+        2
+      ],
+      "fx_conversion": [
+        1,
+        2
+      ],
+      "period_cutoff": [
+        1,
+        2
+      ]
+    },
+    "interactions": {
+      "A": [
+        0,
+        1
+      ],
+      "B": 0
+    },
+    "distractors": {
+      "split_payment": [
+        1,
+        2
+      ],
+      "partial_payment": [
+        1,
+        2
+      ],
+      "recurring": [
+        1,
+        2
+      ],
+      "refund": [
+        0,
+        1
+      ],
+      "boundary": [
+        1,
+        3
+      ],
+      "next_period_invoice": [
+        1,
+        2
+      ],
+      "weekend_fx": [
+        0,
+        2
+      ],
+      "prior_invoice": [
+        1,
+        3
+      ]
+    }
+  },
+  "seed": 2006,
+  "attempt": 0,
+  "sampled": {
+    "error_counts": {
+      "duplicate_invoice": 1,
+      "payment_allocation": 1,
+      "fx_conversion": 2,
+      "period_cutoff": 1
+    },
+    "interactions": {
+      "A": 1,
+      "B": 0
+    },
+    "distractors": {
+      "split_payment": 2,
+      "partial_payment": 1,
+      "recurring": 2,
+      "refund": 0,
+      "boundary": 3,
+      "next_period_invoice": 2,
+      "weekend_fx": 1,
+      "prior_invoice": 2
+    }
+  },
+  "company": {
+    "base_currency": "KZT",
+    "foreign_currencies": [
+      "EUR",
+      "USD"
+    ],
+    "timezone": "+00:00",
+    "rounding": "ROUND_HALF_UP"
+  },
+  "pre_injection": {
+    "ledger_rows": 1791,
+    "total_debit_minor": 256624843931,
+    "total_credit_minor": 256624843931,
+    "invariants": "passed (strict)",
+    "reference_audit_issues": 0
+  },
+  "changes": [
+    {
+      "issue_ids": [
+        "ISS-01"
+      ],
+      "target": "invoices:INV-P6ENR7",
+      "field": "document",
+      "before": null,
+      "after": "added (copy of INV-CPYKKP)",
+      "note": ""
+    },
+    {
+      "issue_ids": [
+        "ISS-01"
+      ],
+      "target": "invoices:INV-P6ENR7",
+      "field": "_book.booked",
+      "before": null,
+      "after": true,
+      "note": ""
+    },
+    {
+      "issue_ids": [
+        "ISS-02"
+      ],
+      "target": "payments:PAY-G7Z4YS",
+      "field": "invoice_refs",
+      "before": [
+        {
+          "invoice_id": "INV-DNTFF7",
+          "applied_minor": 304220000
+        }
+      ],
+      "after": [
+        {
+          "invoice_id": "INV-DNTFF7",
+          "applied_minor": 215996200
+        }
+      ],
+      "note": "partial"
+    },
+    {
+      "issue_ids": [
+        "ISS-03"
+      ],
+      "target": "payments:PAY-D8KDMW",
+      "field": "_book.rate_date",
+      "before": "2025-05-30",
+      "after": "2025-06-02",
+      "note": "next_business_day"
+    },
+    {
+      "issue_ids": [
+        "ISS-04"
+      ],
+      "target": "invoices:INV-44HXEK",
+      "field": "_book.rate_date",
+      "before": "2025-05-23",
+      "after": "2025-05-26",
+      "note": "next_business_day"
+    },
+    {
+      "issue_ids": [
+        "ISS-05"
+      ],
+      "target": "invoices:INV-ZSMJRL",
+      "field": "_book.booked",
+      "before": false,
+      "after": true,
+      "note": "early"
+    },
+    {
+      "issue_ids": [
+        "ISS-05"
+      ],
+      "target": "invoices:INV-ZSMJRL",
+      "field": "_book.ledger_ts",
+      "before": null,
+      "after": "2025-05-31T21:50:03+00:00",
+      "note": "early"
+    },
+    {
+      "issue_ids": [
+        "ISS-06",
+        "ISS-07",
+        "ISS-08"
+      ],
+      "target": "payments:PAY-K6H6WH",
+      "field": "invoice_refs",
+      "before": [
+        {
+          "invoice_id": "INV-THL43G",
+          "applied_minor": 3360000
+        }
+      ],
+      "after": [
+        {
+          "invoice_id": "INV-THL43G",
+          "applied_minor": 1713600
+        }
+      ],
+      "note": "partial"
+    },
+    {
+      "issue_ids": [
+        "ISS-06",
+        "ISS-07",
+        "ISS-08"
+      ],
+      "target": "payments:PAY-K6H6WH",
+      "field": "_book.rate_date",
+      "before": "2025-05-30",
+      "after": "2025-06-02",
+      "note": "next_business_day"
+    },
+    {
+      "issue_ids": [
+        "ISS-06",
+        "ISS-07",
+        "ISS-08"
+      ],
+      "target": "payments:PAY-K6H6WH",
+      "field": "_book.booked",
+      "before": false,
+      "after": true,
+      "note": "early"
+    },
+    {
+      "issue_ids": [
+        "ISS-06",
+        "ISS-07",
+        "ISS-08"
+      ],
+      "target": "payments:PAY-K6H6WH",
+      "field": "_book.ledger_ts",
+      "before": null,
+      "after": "2025-05-31T23:37:45+00:00",
+      "note": "early"
+    }
+  ],
+  "ledger_diff": {
+    "invoices:INV-P6ENR7": {
+      "before": null,
+      "after": [
+        {
+          "account": "accounts_receivable",
+          "debit_minor": 684044052,
+          "credit_minor": 0,
+          "entity_id": "C-9N83W",
+          "invoice_id": "INV-P6ENR7",
+          "payment_id": null
+        },
+        {
+          "account": "revenue",
+          "debit_minor": 0,
+          "credit_minor": 684044052,
+          "entity_id": "C-9N83W",
+          "invoice_id": "INV-P6ENR7",
+          "payment_id": null
+        }
+      ]
+    },
+    "payments:PAY-G7Z4YS": {
+      "before": [
+        {
+          "account": "bank:KZT",
+          "debit_minor": 304220000,
+          "credit_minor": 0,
+          "entity_id": "C-2VC26",
+          "invoice_id": null,
+          "payment_id": "PAY-G7Z4YS"
+        },
+        {
+          "account": "accounts_receivable",
+          "debit_minor": 0,
+          "credit_minor": 304220000,
+          "entity_id": "C-2VC26",
+          "invoice_id": "INV-DNTFF7",
+          "payment_id": "PAY-G7Z4YS"
+        }
+      ],
+      "after": [
+        {
+          "account": "bank:KZT",
+          "debit_minor": 304220000,
+          "credit_minor": 0,
+          "entity_id": "C-2VC26",
+          "invoice_id": null,
+          "payment_id": "PAY-G7Z4YS"
+        },
+        {
+          "account": "accounts_receivable",
+          "debit_minor": 0,
+          "credit_minor": 215996200,
+          "entity_id": "C-2VC26",
+          "invoice_id": "INV-DNTFF7",
+          "payment_id": "PAY-G7Z4YS"
+        },
+        {
+          "account": "unapplied_cash",
+          "debit_minor": 0,
+          "credit_minor": 88223800,
+          "entity_id": "C-2VC26",
+          "invoice_id": null,
+          "payment_id": "PAY-G7Z4YS"
+        }
+      ]
+    },
+    "payments:PAY-D8KDMW": {
+      "before": [
+        {
+          "account": "bank:USD",
+          "debit_minor": 1712386808,
+          "credit_minor": 0,
+          "entity_id": "C-SBTQM",
+          "invoice_id": null,
+          "payment_id": "PAY-D8KDMW"
+        },
+        {
+          "account": "accounts_receivable",
+          "debit_minor": 0,
+          "credit_minor": 1708887695,
+          "entity_id": "C-SBTQM",
+          "invoice_id": "INV-W5VN87",
+          "payment_id": "PAY-D8KDMW"
+        },
+        {
+          "account": "fx_gain_loss",
+          "debit_minor": 0,
+          "credit_minor": 3499113,
+          "entity_id": "C-SBTQM",
+          "invoice_id": null,
+          "payment_id": "PAY-D8KDMW"
+        }
+      ],
+      "after": [
+        {
+          "account": "bank:USD",
+          "debit_minor": 1706907158,
+          "credit_minor": 0,
+          "entity_id": "C-SBTQM",
+          "invoice_id": null,
+          "payment_id": "PAY-D8KDMW"
+        },
+        {
+          "account": "accounts_receivable",
+          "debit_minor": 0,
+          "credit_minor": 1708887695,
+          "entity_id": "C-SBTQM",
+          "invoice_id": "INV-W5VN87",
+          "payment_id": "PAY-D8KDMW"
+        },
+        {
+          "account": "fx_gain_loss",
+          "debit_minor": 1980537,
+          "credit_minor": 0,
+          "entity_id": "C-SBTQM",
+          "invoice_id": null,
+          "payment_id": "PAY-D8KDMW"
+        }
+      ]
+    },
+    "invoices:INV-44HXEK": {
+      "before": [
+        {
+          "account": "accounts_receivable",
+          "debit_minor": 1081573252,
+          "credit_minor": 0,
+          "entity_id": "C-WF3AT",
+          "invoice_id": "INV-44HXEK",
+          "payment_id": null
+        },
+        {
+          "account": "revenue",
+          "debit_minor": 0,
+          "credit_minor": 1081573252,
+          "entity_id": "C-WF3AT",
+          "invoice_id": "INV-44HXEK",
+          "payment_id": null
+        }
+      ],
+      "after": [
+        {
+          "account": "accounts_receivable",
+          "debit_minor": 1079950895,
+          "credit_minor": 0,
+          "entity_id": "C-WF3AT",
+          "invoice_id": "INV-44HXEK",
+          "payment_id": null
+        },
+        {
+          "account": "revenue",
+          "debit_minor": 0,
+          "credit_minor": 1079950895,
+          "entity_id": "C-WF3AT",
+          "invoice_id": "INV-44HXEK",
+          "payment_id": null
+        }
+      ]
+    },
+    "invoices:INV-ZSMJRL": {
+      "before": null,
+      "after": [
+        {
+          "account": "accounts_receivable",
+          "debit_minor": 925830000,
+          "credit_minor": 0,
+          "entity_id": "C-8PES2",
+          "invoice_id": "INV-ZSMJRL",
+          "payment_id": null
+        },
+        {
+          "account": "revenue",
+          "debit_minor": 0,
+          "credit_minor": 925830000,
+          "entity_id": "C-8PES2",
+          "invoice_id": "INV-ZSMJRL",
+          "payment_id": null
+        }
+      ]
+    },
+    "payments:PAY-K6H6WH": {
+      "before": null,
+      "after": [
+        {
+          "account": "bank:EUR",
+          "debit_minor": 1918470926,
+          "credit_minor": 0,
+          "entity_id": "C-S35XL",
+          "invoice_id": null,
+          "payment_id": "PAY-K6H6WH"
+        },
+        {
+          "account": "accounts_receivable",
+          "debit_minor": 0,
+          "credit_minor": 961767459,
+          "entity_id": "C-S35XL",
+          "invoice_id": "INV-THL43G",
+          "payment_id": "PAY-K6H6WH"
+        },
+        {
+          "account": "unapplied_cash",
+          "debit_minor": 0,
+          "credit_minor": 940050754,
+          "entity_id": "C-S35XL",
+          "invoice_id": null,
+          "payment_id": "PAY-K6H6WH"
+        },
+        {
+          "account": "fx_gain_loss",
+          "debit_minor": 0,
+          "credit_minor": 16652713,
+          "entity_id": "C-S35XL",
+          "invoice_id": null,
+          "payment_id": "PAY-K6H6WH"
+        }
+      ]
+    }
+  },
+  "distractors": [
+    {
+      "kind": "split_payment",
+      "ids": [
+        "invoices:INV-3UK3DF",
+        "payments:PAY-FNYLAS",
+        "payments:PAY-5G5MAY"
+      ]
+    },
+    {
+      "kind": "split_payment",
+      "ids": [
+        "invoices:INV-N399XN",
+        "payments:PAY-KEAN7F",
+        "payments:PAY-ZM44JT"
+      ]
+    },
+    {
+      "kind": "partial_payment",
+      "ids": [
+        "invoices:INV-GNUVZF",
+        "payments:PAY-5CNKGK"
+      ]
+    },
+    {
+      "kind": "recurring",
+      "ids": [
+        "invoices:INV-C9TGQE",
+        "invoices:INV-8KY39F",
+        "invoices:INV-ZWAYEQ"
+      ]
+    },
+    {
+      "kind": "recurring",
+      "ids": [
+        "invoices:INV-T35LGG",
+        "invoices:INV-XYQD7C",
+        "invoices:INV-4T3XLZ"
+      ]
+    },
+    {
+      "kind": "boundary",
+      "ids": [
+        "invoices:INV-2VQWBF"
+      ]
+    },
+    {
+      "kind": "boundary",
+      "ids": [
+        "invoices:INV-EPT9B7"
+      ]
+    },
+    {
+      "kind": "boundary",
+      "ids": [
+        "invoices:INV-2QRHBL"
+      ]
+    },
+    {
+      "kind": "next_period_invoice",
+      "ids": [
+        "invoices:INV-XRB3LH"
+      ]
+    },
+    {
+      "kind": "next_period_invoice",
+      "ids": [
+        "invoices:INV-FCKTBS"
+      ]
+    },
+    {
+      "kind": "weekend_fx",
+      "ids": [
+        "invoices:INV-KH5E29"
+      ]
+    },
+    {
+      "kind": "prior_invoice",
+      "ids": [
+        "invoices:INV-234TPT"
+      ]
+    },
+    {
+      "kind": "prior_invoice",
+      "ids": [
+        "invoices:INV-ZB6CX7",
+        "payments:PAY-DZCBBR"
+      ]
+    }
+  ]
+}

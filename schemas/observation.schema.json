@@ -1,0 +1,139 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://auditgym.local/schemas/observation.schema.json",
+  "title": "AuditEnv observation",
+  "description": "Observation returned by AuditEnv.reset() (initial) or AuditEnv.step() (step). schema_version 1.0.",
+  "schema_version": "1.0",
+  "oneOf": [
+    {"$ref": "#/$defs/initial"},
+    {"$ref": "#/$defs/step"}
+  ],
+  "$defs": {
+    "count": {"type": "integer", "minimum": 0},
+    "initial": {
+      "type": "object",
+      "required": ["task", "episode_id", "manifest", "policy", "tables", "actions", "step",
+                   "steps_remaining"],
+      "additionalProperties": false,
+      "properties": {
+        "task": {"type": "string"},
+        "episode_id": {"type": "string"},
+        "manifest": {"type": "object"},
+        "policy": {"type": "object"},
+        "tables": {
+          "type": "object",
+          "required": ["ledger", "invoices", "payments", "fx"],
+          "additionalProperties": {"$ref": "#/$defs/count"}
+        },
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "args", "description"],
+            "properties": {
+              "name": {"type": "string"},
+              "args": {"type": "object"},
+              "description": {"type": "string"}
+            }
+          }
+        },
+        "step": {"const": 0},
+        "steps_remaining": {"$ref": "#/$defs/count"}
+      }
+    },
+    "step": {
+      "type": "object",
+      "required": ["step", "steps_remaining", "action"],
+      "additionalProperties": false,
+      "oneOf": [
+        {"required": ["result"]},
+        {"required": ["error"]}
+      ],
+      "properties": {
+        "step": {"$ref": "#/$defs/count"},
+        "steps_remaining": {"$ref": "#/$defs/count"},
+        "action": {
+          "enum": ["list_records", "get_record", "get_document", "calculator", "submit", null]
+        },
+        "result": {
+          "anyOf": [
+            {"type": "null"},
+            {"$ref": "#/$defs/page"},
+            {"$ref": "#/$defs/record"},
+            {"$ref": "#/$defs/document"},
+            {"$ref": "#/$defs/calc"},
+            {"$ref": "#/$defs/submitted"}
+          ]
+        },
+        "error": {
+          "type": "object",
+          "required": ["code", "message"],
+          "additionalProperties": false,
+          "properties": {
+            "code": {
+              "enum": ["unknown_action", "bad_args", "not_found", "episode_over", "time_limit"]
+            },
+            "message": {"type": "string", "maxLength": 200}
+          }
+        },
+        "truncated_reason": {"enum": ["step_limit", "time_limit"]}
+      }
+    },
+    "ref": {"type": "string", "pattern": "^(ledger|invoices|payments|fx):.+$"},
+    "page": {
+      "type": "object",
+      "required": ["table", "items", "next_cursor", "total"],
+      "additionalProperties": false,
+      "properties": {
+        "table": {"enum": ["ledger", "invoices", "payments", "fx"]},
+        "items": {
+          "type": "array",
+          "maxItems": 50,
+          "items": {
+            "type": "object",
+            "required": ["ref", "record"],
+            "additionalProperties": false,
+            "properties": {"ref": {"$ref": "#/$defs/ref"}, "record": {"type": "object"}}
+          }
+        },
+        "next_cursor": {"type": ["string", "null"]},
+        "total": {"$ref": "#/$defs/count"}
+      }
+    },
+    "record": {
+      "type": "object",
+      "required": ["ref", "record"],
+      "additionalProperties": false,
+      "properties": {"ref": {"$ref": "#/$defs/ref"}, "record": {"type": "object"}}
+    },
+    "document": {
+      "type": "object",
+      "required": ["doc_id", "kind", "ref", "document"],
+      "additionalProperties": false,
+      "properties": {
+        "doc_id": {"type": "string"},
+        "kind": {"enum": ["invoice", "payment"]},
+        "ref": {"$ref": "#/$defs/ref"},
+        "document": {"type": "object"}
+      }
+    },
+    "calc": {
+      "type": "object",
+      "required": ["expression", "value"],
+      "additionalProperties": false,
+      "properties": {
+        "expression": {"type": "string"},
+        "value": {"type": "string", "pattern": "^-?[0-9]+(\\.[0-9]+)?$"}
+      }
+    },
+    "submitted": {
+      "type": "object",
+      "required": ["submitted", "count"],
+      "additionalProperties": false,
+      "properties": {
+        "submitted": {"const": true},
+        "count": {"type": ["integer", "null"], "minimum": 0}
+      }
+    }
+  }
+}

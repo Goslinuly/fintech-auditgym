@@ -1,0 +1,10 @@
+{
+  "split": "sample",
+  "episodes": [
+    {
+      "name": "sample_00",
+      "config": "configs/presets/interactions.json",
+      "seed": 42
+    }
+  ]
+}

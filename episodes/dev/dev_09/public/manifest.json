@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-78ea0570d2ad",
+  "company_name": "Ververzel LLP",
+  "base_currency": "EUR",
+  "currencies": {
+    "EUR": {
+      "exponent": 2
+    },
+    "JPY": {
+      "exponent": 0
+    },
+    "KZT": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2025-03-01T00:00:00+01:00",
+  "period_end": "2025-04-01T00:00:00+01:00",
+  "period_end_exclusive": true,
+  "timezone": "+01:00",
+  "counts": {
+    "ledger_rows": 400,
+    "invoices": 33,
+    "payments": 17,
+    "documents": 50,
+    "fx_rates": 122
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_UP",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

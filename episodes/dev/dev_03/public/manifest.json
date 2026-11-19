@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-63a660f4fb8d",
+  "company_name": "Ilozel Holdings",
+  "base_currency": "EUR",
+  "currencies": {
+    "EUR": {
+      "exponent": 2
+    },
+    "JPY": {
+      "exponent": 0
+    },
+    "KZT": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2025-02-01T00:00:00-05:00",
+  "period_end": "2025-03-01T00:00:00-05:00",
+  "period_end_exclusive": true,
+  "timezone": "-05:00",
+  "counts": {
+    "ledger_rows": 700,
+    "invoices": 57,
+    "payments": 33,
+    "documents": 90,
+    "fx_rates": 116
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_UP",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

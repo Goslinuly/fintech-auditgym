@@ -1,0 +1,229 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-b867a9d1ea2d",
+  "issue_count": 12,
+  "issues": [
+    {
+      "issue_id": "ISS-01",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-4NPKUU"
+      ],
+      "expected_amount_minor": 2810000,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-4NPKUU",
+          "invoices:INV-DKA25K"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "INV-4NPKUU repeats INV-DKA25K: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-02",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-AG5RHV"
+      ],
+      "expected_amount_minor": 1031200,
+      "currency": "JPY",
+      "evidence_sets": [
+        [
+          "invoices:INV-AG5RHV",
+          "invoices:INV-XTZY5N"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "INV-AG5RHV repeats INV-XTZY5N: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-03",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-X3Q645"
+      ],
+      "expected_amount_minor": 958800,
+      "currency": "JPY",
+      "evidence_sets": [
+        [
+          "invoices:INV-3XPEGN",
+          "invoices:INV-X3Q645"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "INV-X3Q645 repeats INV-3XPEGN: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-04",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-ZTAWE4",
+        "payments:PAY-W3CE5B"
+      ],
+      "expected_amount_minor": 173600,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-ZTAWE4",
+          "payments:PAY-W3CE5B"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "PAY-W3CE5B settles INV-ZTAWE4 but 173600 USD minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-05",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-8FS7R8",
+        "payments:PAY-E94BDP"
+      ],
+      "expected_amount_minor": 2548000,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-8FS7R8",
+          "payments:PAY-E94BDP"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "PAY-E94BDP settles INV-8FS7R8 but 2548000 USD minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-06",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-5GDWE4",
+        "payments:PAY-PXXJLW"
+      ],
+      "expected_amount_minor": 870000,
+      "currency": "JPY",
+      "evidence_sets": [
+        [
+          "invoices:INV-5GDWE4",
+          "payments:PAY-PXXJLW"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "PAY-PXXJLW settles INV-5GDWE4 but 870000 JPY minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-07",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "invoices:INV-56VPEL"
+      ],
+      "expected_amount_minor": 1954,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "fx:2025-01-03/JPY/USD",
+          "invoices:INV-56VPEL",
+          "ledger:LF6KZFVU"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "invoices:INV-56VPEL converted at the JPY rate of the wrong date (stale); policy rate is dated 2025-01-03"
+    },
+    {
+      "issue_id": "ISS-08",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "invoices:INV-FQXQ6G"
+      ],
+      "expected_amount_minor": 4546,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "fx:2025-01-03/JPY/USD",
+          "invoices:INV-FQXQ6G",
+          "ledger:LR4AZ9R2"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "invoices:INV-FQXQ6G converted at the JPY rate of the wrong date (next_business_day); policy rate is dated 2025-01-03"
+    },
+    {
+      "issue_id": "ISS-09",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-LZ63SQ"
+      ],
+      "expected_amount_minor": 9871,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "fx:2025-01-08/JPY/USD",
+          "ledger:L58GJQ54",
+          "payments:PAY-LZ63SQ"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "payments:PAY-LZ63SQ converted at the JPY rate of the wrong date (stale); policy rate is dated 2025-01-08"
+    },
+    {
+      "issue_id": "ISS-10",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "invoices:INV-BGRS99"
+      ],
+      "expected_amount_minor": 6020000,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-BGRS99",
+          "ledger:LHSTTA24"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "invoices:INV-BGRS99 is dated outside the period (early) but booked inside it"
+    },
+    {
+      "issue_id": "ISS-11",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "invoices:INV-FXCAEJ"
+      ],
+      "expected_amount_minor": 1280000,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-FXCAEJ",
+          "ledger:LM869GM3"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "invoices:INV-FXCAEJ is dated outside the period (early_tz) but booked inside it"
+    },
+    {
+      "issue_id": "ISS-12",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "invoices:INV-NWMJTK"
+      ],
+      "expected_amount_minor": 978000,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-NWMJTK",
+          "ledger:LL26JV6G"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "invoices:INV-NWMJTK is dated outside the period (early_tz) but booked inside it"
+    }
+  ]
+}

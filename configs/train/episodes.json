@@ -1,0 +1,55 @@
+{
+  "split": "train",
+  "episodes": [
+    {
+      "name": "train_00",
+      "config": "configs/presets/clean_small.json",
+      "seed": 1001
+    },
+    {
+      "name": "train_01",
+      "config": "configs/presets/clean_large.json",
+      "seed": 1002
+    },
+    {
+      "name": "train_02",
+      "config": "configs/presets/mixed_small.json",
+      "seed": 1003
+    },
+    {
+      "name": "train_03",
+      "config": "configs/presets/mixed_small.json",
+      "seed": 1004
+    },
+    {
+      "name": "train_04",
+      "config": "configs/presets/mixed_medium.json",
+      "seed": 1005
+    },
+    {
+      "name": "train_05",
+      "config": "configs/presets/mixed_medium.json",
+      "seed": 1006
+    },
+    {
+      "name": "train_06",
+      "config": "configs/presets/mixed_large.json",
+      "seed": 1007
+    },
+    {
+      "name": "train_07",
+      "config": "configs/presets/interactions.json",
+      "seed": 1008
+    },
+    {
+      "name": "train_08",
+      "config": "configs/presets/interactions.json",
+      "seed": 1009
+    },
+    {
+      "name": "train_09",
+      "config": "configs/presets/single_type.json",
+      "seed": 1010
+    }
+  ]
+}

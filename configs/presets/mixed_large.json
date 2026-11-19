@@ -1,0 +1,31 @@
+{
+  "config_version": "1.0",
+  "name": "mixed_large",
+  "n_ledger_rows": 1800,
+  "n_documents": 180,
+  "error_counts": {
+    "duplicate_invoice": [
+      1,
+      2
+    ],
+    "payment_allocation": [
+      1,
+      2
+    ],
+    "fx_conversion": [
+      1,
+      2
+    ],
+    "period_cutoff": [
+      1,
+      2
+    ]
+  },
+  "interactions": {
+    "A": [
+      0,
+      1
+    ],
+    "B": 0
+  }
+}

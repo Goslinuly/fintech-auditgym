@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-b867a9d1ea2d",
+  "company_name": "Vernor LLP",
+  "base_currency": "USD",
+  "currencies": {
+    "JPY": {
+      "exponent": 0
+    },
+    "USD": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2025-01-01T00:00:00+09:00",
+  "period_end": "2025-02-01T00:00:00+09:00",
+  "period_end_exclusive": true,
+  "timezone": "+09:00",
+  "counts": {
+    "ledger_rows": 400,
+    "invoices": 34,
+    "payments": 16,
+    "documents": 50,
+    "fx_rates": 60
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_EVEN",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

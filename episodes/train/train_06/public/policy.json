@@ -1,0 +1,41 @@
+{
+  "schema_version": "1.0",
+  "period": {
+    "start": "2026-01-01T00:00:00+06:00",
+    "end": "2026-02-01T00:00:00+06:00",
+    "end_exclusive": true,
+    "timezone": "+06:00",
+    "cutoff_basis": "document date in the company timezone: invoices.issued_at, payments.timestamp"
+  },
+  "fx": {
+    "quote": "1 unit of source_currency = rate units of target_currency (major units)",
+    "rate_date": "document date in the company timezone (not the UTC date)",
+    "missing_rate": "use the last rate published on or before that date (no weekend rates)",
+    "invoice_rate": "invoices are booked at the rate of their own date",
+    "payment_rate": "payments are booked at the rate of their own date",
+    "settlement": "accounts_receivable is cleared at the invoice's own rate; the difference goes to fx_gain_loss",
+    "refund": "refunds clear unapplied_cash at the rate of the refunded payment"
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_EVEN",
+    "scope": "each converted ledger line is rounded once to a whole base-currency minor unit"
+  },
+  "allocation": {
+    "invoice_refs": "applied_minor is in the payment currency, which always equals the invoice currency",
+    "unapplied": "any part of a receipt not applied to an invoice is credited to unapplied_cash"
+  },
+  "ledger": {
+    "currency": "KZT",
+    "accounts": {
+      "accounts_receivable": "Amounts customers owe on invoices (base currency)",
+      "revenue": "Sales revenue",
+      "unapplied_cash": "Cash received but not allocated to any invoice",
+      "fx_gain_loss": "Realised FX gains (credit) and losses (debit)",
+      "bank:<CCY>": "Bank account held in <CCY>, carried at base-currency equivalent",
+      "expense:*": "Operating expenses without customer documents",
+      "payroll_tax_payable": "Payroll taxes withheld",
+      "other_income": "Other income"
+    },
+    "null": "empty CSV cell means null"
+  }
+}

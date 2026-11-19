@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-3d8a7609fbca",
+  "company_name": "Oruoru LLP",
+  "base_currency": "KZT",
+  "currencies": {
+    "EUR": {
+      "exponent": 2
+    },
+    "KZT": {
+      "exponent": 2
+    },
+    "USD": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2025-09-01T00:00:00+05:00",
+  "period_end": "2025-10-01T00:00:00+05:00",
+  "period_end_exclusive": true,
+  "timezone": "+05:00",
+  "counts": {
+    "ledger_rows": 500,
+    "invoices": 37,
+    "payments": 23,
+    "documents": 60,
+    "fx_rates": 120
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_EVEN",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

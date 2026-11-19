@@ -1,0 +1,81 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-c89a049db3e7",
+  "issue_count": 4,
+  "issues": [
+    {
+      "issue_id": "ISS-01",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-TQJ7SX"
+      ],
+      "expected_amount_minor": 4220700,
+      "currency": "JPY",
+      "evidence_sets": [
+        [
+          "invoices:INV-EYMQVS",
+          "invoices:INV-TQJ7SX"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "INV-TQJ7SX repeats INV-EYMQVS: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-02",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-TE7CDP",
+        "payments:PAY-T6FQDY"
+      ],
+      "expected_amount_minor": 2830700,
+      "currency": "JPY",
+      "evidence_sets": [
+        [
+          "invoices:INV-TE7CDP",
+          "payments:PAY-T6FQDY"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "PAY-T6FQDY settles INV-TE7CDP but 2830700 JPY minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-03",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "invoices:INV-SGUXJG"
+      ],
+      "expected_amount_minor": 11144,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "fx:2025-09-26/JPY/EUR",
+          "invoices:INV-SGUXJG",
+          "ledger:L4Y6LRZN"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "invoices:INV-SGUXJG converted at the JPY rate of the wrong date (next_business_day); policy rate is dated 2025-09-26"
+    },
+    {
+      "issue_id": "ISS-04",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "invoices:INV-EZNRFK"
+      ],
+      "expected_amount_minor": 4112821,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-EZNRFK",
+          "ledger:L3JZ9PV4"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "invoices:INV-EZNRFK is dated outside the period (early) but booked inside it"
+    }
+  ]
+}

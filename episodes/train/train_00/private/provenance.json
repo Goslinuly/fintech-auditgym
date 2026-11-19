@@ -1,0 +1,222 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-83c5e947b549",
+  "generator_version": "0.1.0",
+  "config_version": "1.0",
+  "config": {
+    "config_version": "1.0",
+    "name": "clean_small",
+    "n_ledger_rows": 250,
+    "n_documents": 30,
+    "base_currency": null,
+    "currencies": [
+      "KZT",
+      "USD",
+      "EUR",
+      "JPY"
+    ],
+    "n_foreign_currencies": [
+      1,
+      2
+    ],
+    "foreign_invoice_share": 0.35,
+    "timezone": null,
+    "period": null,
+    "clean": true,
+    "error_counts": {
+      "duplicate_invoice": [
+        0,
+        1
+      ],
+      "payment_allocation": [
+        0,
+        1
+      ],
+      "fx_conversion": [
+        0,
+        1
+      ],
+      "period_cutoff": [
+        0,
+        1
+      ]
+    },
+    "interactions": {
+      "A": 0,
+      "B": 0
+    },
+    "distractors": {
+      "split_payment": [
+        1,
+        2
+      ],
+      "partial_payment": [
+        1,
+        2
+      ],
+      "recurring": [
+        1,
+        2
+      ],
+      "refund": [
+        0,
+        1
+      ],
+      "boundary": [
+        1,
+        3
+      ],
+      "next_period_invoice": [
+        1,
+        2
+      ],
+      "weekend_fx": [
+        0,
+        2
+      ],
+      "prior_invoice": [
+        1,
+        3
+      ]
+    }
+  },
+  "seed": 1001,
+  "attempt": 0,
+  "sampled": {
+    "error_counts": {
+      "duplicate_invoice": 0,
+      "payment_allocation": 0,
+      "fx_conversion": 0,
+      "period_cutoff": 0
+    },
+    "interactions": {
+      "A": 0,
+      "B": 0
+    },
+    "distractors": {
+      "split_payment": 2,
+      "partial_payment": 1,
+      "recurring": 2,
+      "refund": 0,
+      "boundary": 2,
+      "next_period_invoice": 2,
+      "weekend_fx": 2,
+      "prior_invoice": 3
+    }
+  },
+  "company": {
+    "base_currency": "USD",
+    "foreign_currencies": [
+      "KZT"
+    ],
+    "timezone": "+00:00",
+    "rounding": "ROUND_HALF_EVEN"
+  },
+  "pre_injection": {
+    "ledger_rows": 250,
+    "total_debit_minor": 52715037,
+    "total_credit_minor": 52715037,
+    "invariants": "passed (strict)",
+    "reference_audit_issues": 0
+  },
+  "changes": [],
+  "ledger_diff": {},
+  "distractors": [
+    {
+      "kind": "split_payment",
+      "ids": [
+        "invoices:INV-R8TYSB",
+        "payments:PAY-XCSVB6",
+        "payments:PAY-MLMUCP",
+        "payments:PAY-X2CKXF"
+      ]
+    },
+    {
+      "kind": "split_payment",
+      "ids": [
+        "invoices:INV-MG8SR4",
+        "payments:PAY-8FTATJ",
+        "payments:PAY-KSLXCZ",
+        "payments:PAY-KP3JWL"
+      ]
+    },
+    {
+      "kind": "partial_payment",
+      "ids": [
+        "invoices:INV-2D6CQZ",
+        "payments:PAY-4GPZ2M"
+      ]
+    },
+    {
+      "kind": "recurring",
+      "ids": [
+        "invoices:INV-XDWFNU",
+        "invoices:INV-CDL7TF"
+      ]
+    },
+    {
+      "kind": "recurring",
+      "ids": [
+        "invoices:INV-HA3EEB",
+        "invoices:INV-M4PWXJ",
+        "invoices:INV-GBK2FQ"
+      ]
+    },
+    {
+      "kind": "boundary",
+      "ids": [
+        "invoices:INV-54ZZZC"
+      ]
+    },
+    {
+      "kind": "boundary",
+      "ids": [
+        "invoices:INV-ARN8JN"
+      ]
+    },
+    {
+      "kind": "next_period_invoice",
+      "ids": [
+        "invoices:INV-ZMH92F"
+      ]
+    },
+    {
+      "kind": "next_period_invoice",
+      "ids": [
+        "invoices:INV-8EG9JY"
+      ]
+    },
+    {
+      "kind": "weekend_fx",
+      "ids": [
+        "invoices:INV-E767CS"
+      ]
+    },
+    {
+      "kind": "weekend_fx",
+      "ids": [
+        "invoices:INV-5ER3K3"
+      ]
+    },
+    {
+      "kind": "prior_invoice",
+      "ids": [
+        "invoices:INV-FPPXSV"
+      ]
+    },
+    {
+      "kind": "prior_invoice",
+      "ids": [
+        "invoices:INV-YHJMS9",
+        "payments:PAY-PUSA8N"
+      ]
+    },
+    {
+      "kind": "prior_invoice",
+      "ids": [
+        "invoices:INV-AXMLFU",
+        "payments:PAY-DG865K"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-2139c36ab46f",
+  "company_name": "Dunversen LLP",
+  "base_currency": "KZT",
+  "currencies": {
+    "KZT": {
+      "exponent": 2
+    },
+    "USD": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2025-11-01T00:00:00+06:00",
+  "period_end": "2025-12-01T00:00:00+06:00",
+  "period_end_exclusive": true,
+  "timezone": "+06:00",
+  "counts": {
+    "ledger_rows": 500,
+    "invoices": 39,
+    "payments": 21,
+    "documents": 60,
+    "fx_rates": 60
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_EVEN",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

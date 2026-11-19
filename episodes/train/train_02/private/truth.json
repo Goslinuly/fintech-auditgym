@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-a952494fbb46",
+  "issue_count": 2,
+  "issues": [
+    {
+      "issue_id": "ISS-01",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-E99USL"
+      ],
+      "expected_amount_minor": 18461,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "fx:2026-04-17/JPY/USD",
+          "ledger:LSS6BHNJ",
+          "payments:PAY-E99USL"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "payments:PAY-E99USL converted at the JPY rate of the wrong date (next_business_day); policy rate is dated 2026-04-17"
+    },
+    {
+      "issue_id": "ISS-02",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "invoices:INV-65X2U6"
+      ],
+      "expected_amount_minor": 2346839,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-65X2U6",
+          "ledger:LG4W9CYZ"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "invoices:INV-65X2U6 is dated outside the period (late) but booked inside it"
+    }
+  ]
+}

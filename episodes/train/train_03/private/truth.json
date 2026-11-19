@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-1662e76cb416",
+  "issue_count": 3,
+  "issues": [
+    {
+      "issue_id": "ISS-01",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-V87EMQ"
+      ],
+      "expected_amount_minor": 4860000,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-C8F9MA",
+          "invoices:INV-V87EMQ"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "INV-V87EMQ repeats INV-C8F9MA: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-02",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-NDLKVT"
+      ],
+      "expected_amount_minor": 92,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "fx:2026-07-31/JPY/USD",
+          "ledger:LWUFM632",
+          "payments:PAY-NDLKVT"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "payments:PAY-NDLKVT converted at the JPY rate of the wrong date (next_business_day); policy rate is dated 2026-07-31"
+    },
+    {
+      "issue_id": "ISS-03",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "invoices:INV-7TG6RA"
+      ],
+      "expected_amount_minor": 1913700,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-7TG6RA",
+          "ledger:LUAVVEQB"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "invoices:INV-7TG6RA is dated outside the period (early_tz) but booked inside it"
+    }
+  ]
+}

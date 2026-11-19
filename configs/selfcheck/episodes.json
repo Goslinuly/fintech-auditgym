@@ -1,0 +1,105 @@
+{
+  "split": "selfcheck",
+  "episodes": [
+    {
+      "name": "selfcheck_00",
+      "config": "configs/presets/clean_small.json",
+      "seed": 9001
+    },
+    {
+      "name": "selfcheck_01",
+      "config": "configs/presets/clean_small.json",
+      "seed": 9002
+    },
+    {
+      "name": "selfcheck_02",
+      "config": "configs/presets/clean_large.json",
+      "seed": 9003
+    },
+    {
+      "name": "selfcheck_03",
+      "config": "configs/presets/clean_large.json",
+      "seed": 9004
+    },
+    {
+      "name": "selfcheck_04",
+      "config": "configs/presets/clean_small.json",
+      "seed": 9005
+    },
+    {
+      "name": "selfcheck_05",
+      "config": "configs/presets/interactions.json",
+      "seed": 9011
+    },
+    {
+      "name": "selfcheck_06",
+      "config": "configs/presets/interactions.json",
+      "seed": 9012
+    },
+    {
+      "name": "selfcheck_07",
+      "config": "configs/presets/interactions.json",
+      "seed": 9013
+    },
+    {
+      "name": "selfcheck_08",
+      "config": "configs/presets/interactions.json",
+      "seed": 9014
+    },
+    {
+      "name": "selfcheck_09",
+      "config": "configs/presets/interactions.json",
+      "seed": 9015
+    },
+    {
+      "name": "selfcheck_10",
+      "config": "configs/presets/mixed_small.json",
+      "seed": 9020
+    },
+    {
+      "name": "selfcheck_11",
+      "config": "configs/presets/mixed_small.json",
+      "seed": 9021
+    },
+    {
+      "name": "selfcheck_12",
+      "config": "configs/presets/mixed_medium.json",
+      "seed": 9022
+    },
+    {
+      "name": "selfcheck_13",
+      "config": "configs/presets/mixed_medium.json",
+      "seed": 9023
+    },
+    {
+      "name": "selfcheck_14",
+      "config": "configs/presets/mixed_medium.json",
+      "seed": 9024
+    },
+    {
+      "name": "selfcheck_15",
+      "config": "configs/presets/mixed_large.json",
+      "seed": 9025
+    },
+    {
+      "name": "selfcheck_16",
+      "config": "configs/presets/mixed_large.json",
+      "seed": 9026
+    },
+    {
+      "name": "selfcheck_17",
+      "config": "configs/presets/single_type.json",
+      "seed": 9027
+    },
+    {
+      "name": "selfcheck_18",
+      "config": "configs/presets/single_type.json",
+      "seed": 9028
+    },
+    {
+      "name": "selfcheck_19",
+      "config": "configs/presets/mixed_small.json",
+      "seed": 9029
+    }
+  ]
+}

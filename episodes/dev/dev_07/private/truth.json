@@ -1,0 +1,155 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-82d794e79195",
+  "issue_count": 8,
+  "issues": [
+    {
+      "issue_id": "ISS-01",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-M2GDNG"
+      ],
+      "expected_amount_minor": 1090000,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-M2GDNG",
+          "invoices:INV-NFKNLJ"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "INV-M2GDNG repeats INV-NFKNLJ: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-02",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-6AR25M"
+      ],
+      "expected_amount_minor": 14392,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "fx:2026-12-23/JPY/EUR",
+          "ledger:LYSCJ556",
+          "payments:PAY-6AR25M"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "payments:PAY-6AR25M converted at the JPY rate of the wrong date (next_business_day); policy rate is dated 2026-12-23"
+    },
+    {
+      "issue_id": "ISS-03",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "invoices:INV-XRF8SV"
+      ],
+      "expected_amount_minor": 1820000,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-XRF8SV",
+          "ledger:LWT2YKQ5"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "invoices:INV-XRF8SV is dated outside the period (late) but booked inside it"
+    },
+    {
+      "issue_id": "ISS-04",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "payments:PAY-S9PZRK"
+      ],
+      "expected_amount_minor": 3869193,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "ledger:L8Q5DRHV",
+          "payments:PAY-S9PZRK"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": "A1",
+      "description": "payments:PAY-S9PZRK is dated outside the period (early_tz) but booked inside it"
+    },
+    {
+      "issue_id": "ISS-05",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-P538KL",
+        "payments:PAY-S9PZRK"
+      ],
+      "expected_amount_minor": 1219542500,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "invoices:INV-P538KL",
+          "payments:PAY-S9PZRK"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": "A1",
+      "description": "PAY-S9PZRK settles INV-P538KL but 1219542500 KZT minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-06",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-S9PZRK"
+      ],
+      "expected_amount_minor": 19834,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "fx:2027-01-01/KZT/EUR",
+          "ledger:L8Q5DRHV",
+          "payments:PAY-S9PZRK"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": "A1",
+      "description": "payments:PAY-S9PZRK converted at the KZT rate of the wrong date (next_business_day); policy rate is dated 2027-01-01"
+    },
+    {
+      "issue_id": "ISS-07",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-LTK9LJ"
+      ],
+      "expected_amount_minor": 1869050000,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "invoices:INV-4UDJBX",
+          "invoices:INV-LTK9LJ"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": "B1",
+      "description": "INV-LTK9LJ repeats INV-4UDJBX: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-08",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-HL998A"
+      ],
+      "expected_amount_minor": 24262,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "fx:2026-12-07/KZT/EUR",
+          "ledger:LFLCYFXG",
+          "payments:PAY-HL998A"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": "B1",
+      "description": "payments:PAY-HL998A converted at the KZT rate of the wrong date (utc_date); policy rate is dated 2026-12-07"
+    }
+  ]
+}

@@ -1,0 +1,55 @@
+{
+  "split": "dev",
+  "episodes": [
+    {
+      "name": "dev_00",
+      "config": "configs/presets/clean_small.json",
+      "seed": 2001
+    },
+    {
+      "name": "dev_01",
+      "config": "configs/presets/clean_large.json",
+      "seed": 2002
+    },
+    {
+      "name": "dev_02",
+      "config": "configs/presets/mixed_small.json",
+      "seed": 2003
+    },
+    {
+      "name": "dev_03",
+      "config": "configs/presets/mixed_medium.json",
+      "seed": 2004
+    },
+    {
+      "name": "dev_04",
+      "config": "configs/presets/mixed_medium.json",
+      "seed": 2005
+    },
+    {
+      "name": "dev_05",
+      "config": "configs/presets/mixed_large.json",
+      "seed": 2006
+    },
+    {
+      "name": "dev_06",
+      "config": "configs/presets/mixed_large.json",
+      "seed": 2007
+    },
+    {
+      "name": "dev_07",
+      "config": "configs/presets/interactions.json",
+      "seed": 2008
+    },
+    {
+      "name": "dev_08",
+      "config": "configs/presets/interactions.json",
+      "seed": 2009
+    },
+    {
+      "name": "dev_09",
+      "config": "configs/presets/single_type.json",
+      "seed": 2010
+    }
+  ]
+}

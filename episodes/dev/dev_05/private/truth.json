@@ -1,0 +1,156 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-c6cdbb94fc36",
+  "issue_count": 8,
+  "issues": [
+    {
+      "issue_id": "ISS-01",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-P6ENR7"
+      ],
+      "expected_amount_minor": 1200000,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-CPYKKP",
+          "invoices:INV-P6ENR7"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "INV-P6ENR7 repeats INV-CPYKKP: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-02",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-DNTFF7",
+        "payments:PAY-G7Z4YS"
+      ],
+      "expected_amount_minor": 88223800,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "invoices:INV-DNTFF7",
+          "payments:PAY-G7Z4YS"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "PAY-G7Z4YS settles INV-DNTFF7 but 88223800 KZT minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-03",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-D8KDMW"
+      ],
+      "expected_amount_minor": 5479650,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "fx:2025-05-30/USD/KZT",
+          "ledger:LMZ49FDK",
+          "payments:PAY-D8KDMW"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "payments:PAY-D8KDMW converted at the USD rate of the wrong date (next_business_day); policy rate is dated 2025-05-30"
+    },
+    {
+      "issue_id": "ISS-04",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "invoices:INV-44HXEK"
+      ],
+      "expected_amount_minor": 1622357,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "fx:2025-05-23/EUR/KZT",
+          "invoices:INV-44HXEK",
+          "ledger:LZ9SV4RL"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "invoices:INV-44HXEK converted at the EUR rate of the wrong date (next_business_day); policy rate is dated 2025-05-23"
+    },
+    {
+      "issue_id": "ISS-05",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "invoices:INV-ZSMJRL"
+      ],
+      "expected_amount_minor": 925830000,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "invoices:INV-ZSMJRL",
+          "ledger:LHPWGHGL"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "invoices:INV-ZSMJRL is dated outside the period (early) but booked inside it"
+    },
+    {
+      "issue_id": "ISS-06",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "payments:PAY-K6H6WH"
+      ],
+      "expected_amount_minor": 1918470926,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "ledger:LMFS2FUJ",
+          "payments:PAY-K6H6WH"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": "A1",
+      "description": "payments:PAY-K6H6WH is dated outside the period (early_tz) but booked inside it"
+    },
+    {
+      "issue_id": "ISS-07",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-THL43G",
+        "payments:PAY-K6H6WH"
+      ],
+      "expected_amount_minor": 1646400,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-THL43G",
+          "payments:PAY-K6H6WH"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": "A1",
+      "description": "PAY-K6H6WH settles INV-THL43G but 1646400 EUR minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-08",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-K6H6WH"
+      ],
+      "expected_amount_minor": 1533537,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "fx:2025-05-30/EUR/KZT",
+          "ledger:LMFS2FUJ",
+          "payments:PAY-K6H6WH"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": "A1",
+      "description": "payments:PAY-K6H6WH converted at the EUR rate of the wrong date (next_business_day); policy rate is dated 2025-05-30"
+    }
+  ]
+}

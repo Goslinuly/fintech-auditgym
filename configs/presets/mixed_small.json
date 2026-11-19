@@ -1,0 +1,24 @@
+{
+  "config_version": "1.0",
+  "name": "mixed_small",
+  "n_ledger_rows": 300,
+  "n_documents": 40,
+  "error_counts": {
+    "duplicate_invoice": [
+      0,
+      1
+    ],
+    "payment_allocation": [
+      0,
+      1
+    ],
+    "fx_conversion": [
+      0,
+      1
+    ],
+    "period_cutoff": [
+      0,
+      1
+    ]
+  }
+}

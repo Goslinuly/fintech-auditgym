@@ -1,0 +1,138 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-3d8a7609fbca",
+  "issue_count": 7,
+  "issues": [
+    {
+      "issue_id": "ISS-01",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-U3RKAZ",
+        "payments:PAY-B8X65G"
+      ],
+      "expected_amount_minor": 1996000,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-U3RKAZ",
+          "payments:PAY-B8X65G"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "PAY-B8X65G settles INV-U3RKAZ but 1996000 USD minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-02",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-S544UN"
+      ],
+      "expected_amount_minor": 1576427,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "fx:2025-09-15/EUR/KZT",
+          "ledger:LLUUD5CC",
+          "payments:PAY-S544UN"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "payments:PAY-S544UN converted at the EUR rate of the wrong date (stale); policy rate is dated 2025-09-15"
+    },
+    {
+      "issue_id": "ISS-03",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "payments:PAY-4SVPPZ"
+      ],
+      "expected_amount_minor": 1504806752,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "ledger:L8ERKCD8",
+          "payments:PAY-4SVPPZ"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": "A1",
+      "description": "payments:PAY-4SVPPZ is dated outside the period (early_tz) but booked inside it"
+    },
+    {
+      "issue_id": "ISS-04",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-7CJ4RS",
+        "payments:PAY-4SVPPZ"
+      ],
+      "expected_amount_minor": 1664600,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-7CJ4RS",
+          "payments:PAY-4SVPPZ"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": "A1",
+      "description": "PAY-4SVPPZ settles INV-7CJ4RS but 1664600 USD minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-05",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-4SVPPZ"
+      ],
+      "expected_amount_minor": 9028848,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "fx:2025-10-01/USD/KZT",
+          "ledger:L8ERKCD8",
+          "payments:PAY-4SVPPZ"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": "A1",
+      "description": "payments:PAY-4SVPPZ converted at the USD rate of the wrong date (utc_date); policy rate is dated 2025-10-01"
+    },
+    {
+      "issue_id": "ISS-06",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-JX7K52"
+      ],
+      "expected_amount_minor": 1070000,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-JWUH5Y",
+          "invoices:INV-JX7K52"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": "B1",
+      "description": "INV-JX7K52 repeats INV-JWUH5Y: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-07",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "payments:PAY-CRX4EL"
+      ],
+      "expected_amount_minor": 8944462,
+      "currency": "KZT",
+      "evidence_sets": [
+        [
+          "fx:2025-09-18/USD/KZT",
+          "ledger:LLL3J5H7",
+          "payments:PAY-CRX4EL"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": "B1",
+      "description": "payments:PAY-CRX4EL converted at the USD rate of the wrong date (stale); policy rate is dated 2025-09-18"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "config_version": "1.0",
+  "name": "clean_small",
+  "n_ledger_rows": 250,
+  "n_documents": 30,
+  "clean": true
+}

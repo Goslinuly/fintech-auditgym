@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-c6cdbb94fc36",
+  "company_name": "Marka Holdings",
+  "base_currency": "KZT",
+  "currencies": {
+    "EUR": {
+      "exponent": 2
+    },
+    "KZT": {
+      "exponent": 2
+    },
+    "USD": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2025-05-01T00:00:00+00:00",
+  "period_end": "2025-06-01T00:00:00+00:00",
+  "period_end_exclusive": true,
+  "timezone": "+00:00",
+  "counts": {
+    "ledger_rows": 1800,
+    "invoices": 116,
+    "payments": 64,
+    "documents": 180,
+    "fx_rates": 122
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_UP",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-ae4001e0710a",
+  "company_name": "Zeltal LLP",
+  "base_currency": "USD",
+  "currencies": {
+    "EUR": {
+      "exponent": 2
+    },
+    "JPY": {
+      "exponent": 0
+    },
+    "USD": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2025-07-01T00:00:00+09:00",
+  "period_end": "2025-08-01T00:00:00+09:00",
+  "period_end_exclusive": true,
+  "timezone": "+09:00",
+  "counts": {
+    "ledger_rows": 250,
+    "invoices": 23,
+    "payments": 7,
+    "documents": 30,
+    "fx_rates": 120
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_UP",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

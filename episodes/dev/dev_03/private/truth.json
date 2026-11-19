@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-63a660f4fb8d",
+  "issue_count": 5,
+  "issues": [
+    {
+      "issue_id": "ISS-01",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-8E5U73"
+      ],
+      "expected_amount_minor": 2730000,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-8E5U73",
+          "invoices:INV-YGRGRZ"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "INV-8E5U73 repeats INV-YGRGRZ: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-02",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-U3HHBK",
+        "payments:PAY-NJ88QJ"
+      ],
+      "expected_amount_minor": 739200,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-U3HHBK",
+          "payments:PAY-NJ88QJ"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "PAY-NJ88QJ settles INV-U3HHBK but 739200 EUR minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-03",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-WPTJTU",
+        "payments:PAY-D6TV8P"
+      ],
+      "expected_amount_minor": 748000,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-WPTJTU",
+          "payments:PAY-D6TV8P"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "PAY-D6TV8P settles INV-WPTJTU but 748000 EUR minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-04",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "invoices:INV-55C35Y"
+      ],
+      "expected_amount_minor": 36302,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "fx:2025-02-14/KZT/EUR",
+          "invoices:INV-55C35Y",
+          "ledger:LRM4B32J"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "invoices:INV-55C35Y converted at the KZT rate of the wrong date (stale); policy rate is dated 2025-02-14"
+    },
+    {
+      "issue_id": "ISS-05",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "invoices:INV-5S2TXB"
+      ],
+      "expected_amount_minor": 1771000,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-5S2TXB",
+          "ledger:LL9AX4LN"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "invoices:INV-5S2TXB is dated outside the period (early) but booked inside it"
+    }
+  ]
+}

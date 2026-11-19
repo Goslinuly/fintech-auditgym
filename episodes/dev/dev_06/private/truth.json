@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-9364f57dd74a",
+  "issue_count": 5,
+  "issues": [
+    {
+      "issue_id": "ISS-01",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-ZZ4ML5"
+      ],
+      "expected_amount_minor": 2220000,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-5UNWHW",
+          "invoices:INV-ZZ4ML5"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "INV-ZZ4ML5 repeats INV-5UNWHW: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-02",
+      "type": "duplicate_invoice",
+      "affected_ids": [
+        "invoices:INV-CTBT7V"
+      ],
+      "expected_amount_minor": 3146000,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-8TP9NW",
+          "invoices:INV-CTBT7V"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "INV-CTBT7V repeats INV-8TP9NW: same customer, line items and total; the later copy is booked a second time to revenue"
+    },
+    {
+      "issue_id": "ISS-03",
+      "type": "payment_allocation",
+      "affected_ids": [
+        "invoices:INV-3UPA4Q",
+        "payments:PAY-7DVAX6"
+      ],
+      "expected_amount_minor": 1710000,
+      "currency": "USD",
+      "evidence_sets": [
+        [
+          "invoices:INV-3UPA4Q",
+          "payments:PAY-7DVAX6"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "PAY-7DVAX6 settles INV-3UPA4Q but 1710000 USD minor units were left in unapplied_cash"
+    },
+    {
+      "issue_id": "ISS-04",
+      "type": "fx_conversion",
+      "affected_ids": [
+        "invoices:INV-Y5RKHK"
+      ],
+      "expected_amount_minor": 5179,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "fx:2026-03-20/USD/EUR",
+          "invoices:INV-Y5RKHK",
+          "ledger:LQD4UCVT"
+        ]
+      ],
+      "tolerance_minor": 1,
+      "group": null,
+      "description": "invoices:INV-Y5RKHK converted at the USD rate of the wrong date (due_date); policy rate is dated 2026-03-20"
+    },
+    {
+      "issue_id": "ISS-05",
+      "type": "period_cutoff",
+      "affected_ids": [
+        "invoices:INV-XEL6DQ"
+      ],
+      "expected_amount_minor": 1530000,
+      "currency": "EUR",
+      "evidence_sets": [
+        [
+          "invoices:INV-XEL6DQ",
+          "ledger:LCPYW94D"
+        ]
+      ],
+      "tolerance_minor": 0,
+      "group": null,
+      "description": "invoices:INV-XEL6DQ is dated outside the period (early) but booked inside it"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-18f4655b41d2",
+  "company_name": "Marsenilo Group",
+  "base_currency": "USD",
+  "currencies": {
+    "KZT": {
+      "exponent": 2
+    },
+    "USD": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2026-01-01T00:00:00-03:00",
+  "period_end": "2026-02-01T00:00:00-03:00",
+  "period_end_exclusive": true,
+  "timezone": "-03:00",
+  "counts": {
+    "ledger_rows": 1200,
+    "invoices": 87,
+    "payments": 53,
+    "documents": 140,
+    "fx_rates": 61
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_UP",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

@@ -1,0 +1,24 @@
+{
+  "config_version": "1.0",
+  "name": "single_type",
+  "n_ledger_rows": 400,
+  "n_documents": 50,
+  "error_counts": {
+    "duplicate_invoice": [
+      0,
+      3
+    ],
+    "payment_allocation": [
+      0,
+      3
+    ],
+    "fx_conversion": [
+      0,
+      3
+    ],
+    "period_cutoff": [
+      0,
+      3
+    ]
+  }
+}

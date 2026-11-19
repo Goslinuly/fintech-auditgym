@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-b1fdcc4c8e57",
+  "company_name": "Quadunzel Group",
+  "base_currency": "USD",
+  "currencies": {
+    "JPY": {
+      "exponent": 0
+    },
+    "USD": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2025-09-01T00:00:00-03:00",
+  "period_end": "2025-10-01T00:00:00-03:00",
+  "period_end_exclusive": true,
+  "timezone": "-03:00",
+  "counts": {
+    "ledger_rows": 1200,
+    "invoices": 83,
+    "payments": 57,
+    "documents": 140,
+    "fx_rates": 60
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_UP",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

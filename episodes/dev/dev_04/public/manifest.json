@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "episode_id": "ep-92ee99d01676",
+  "company_name": "Sensen Holdings",
+  "base_currency": "EUR",
+  "currencies": {
+    "EUR": {
+      "exponent": 2
+    },
+    "KZT": {
+      "exponent": 2
+    }
+  },
+  "period_start": "2025-02-01T00:00:00+06:00",
+  "period_end": "2025-03-01T00:00:00+06:00",
+  "period_end_exclusive": true,
+  "timezone": "+06:00",
+  "counts": {
+    "ledger_rows": 700,
+    "invoices": 59,
+    "payments": 31,
+    "documents": 90,
+    "fx_rates": 58
+  },
+  "rounding": {
+    "mode": "ROUND_HALF_UP",
+    "unit": "base-currency minor unit, per ledger line"
+  },
+  "money": "integer minor units; exponent = number of decimal places of the currency"
+}

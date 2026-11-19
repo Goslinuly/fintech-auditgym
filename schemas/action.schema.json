@@ -1,0 +1,110 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://auditgym.local/schemas/action.schema.json",
+  "title": "AuditEnv action",
+  "description": "One agent action for AuditEnv.step(). schema_version 1.0. Max serialized size: 64 KiB.",
+  "schema_version": "1.0",
+  "type": "object",
+  "required": ["name"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "enum": ["list_records", "get_record", "get_document", "calculator", "submit"]
+    },
+    "args": {"type": "object"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"name": {"const": "list_records"}}},
+      "then": {
+        "required": ["args"],
+        "properties": {
+          "args": {
+            "type": "object",
+            "required": ["table"],
+            "additionalProperties": false,
+            "properties": {
+              "table": {"$ref": "#/$defs/table"},
+              "cursor": {"type": ["string", "null"], "maxLength": 64},
+              "limit": {"type": "integer", "minimum": 1, "maximum": 50}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"name": {"const": "get_record"}}},
+      "then": {
+        "required": ["args"],
+        "properties": {
+          "args": {
+            "type": "object",
+            "required": ["table", "id"],
+            "additionalProperties": false,
+            "properties": {
+              "table": {"$ref": "#/$defs/table"},
+              "id": {"$ref": "#/$defs/id"}
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"name": {"const": "get_document"}}},
+      "then": {
+        "required": ["args"],
+        "properties": {
+          "args": {
+            "type": "object",
+            "required": ["doc_id"],
+            "additionalProperties": false,
+            "properties": {"doc_id": {"$ref": "#/$defs/id"}}
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"name": {"const": "calculator"}}},
+      "then": {
+        "required": ["args"],
+        "properties": {
+          "args": {
+            "type": "object",
+            "required": ["expression"],
+            "additionalProperties": false,
+            "properties": {
+              "expression": {
+                "type": "string",
+                "maxLength": 256,
+                "pattern": "^[0-9.+\\-*/() \\t]+$",
+                "not": {"pattern": "(\\*\\*|//)"}
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {"properties": {"name": {"const": "submit"}}},
+      "then": {
+        "required": ["args"],
+        "properties": {
+          "args": {
+            "type": "object",
+            "required": ["findings"],
+            "additionalProperties": false,
+            "properties": {
+              "findings": {
+                "description": "findings.json; its own structure is validated by the grader (schemas/findings.schema.json). An invalid structure is still a submission: the episode ends with reward -1."
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "table": {"enum": ["ledger", "invoices", "payments", "fx"]},
+    "id": {"type": "string", "minLength": 1, "maxLength": 100}
+  }
+}
